@@ -1,6 +1,9 @@
 # YT-Audio-Capture
 
 ## Descrição
+
+AVISO LEGAL E PROPÓSITO ACADÊMICO: O YT-Audio-Capture é uma Prova de Conceito (PoC) desenvolvida exclusivamente para fins educacionais, de pesquisa e testes de segurança. Seu objetivo é demonstrar o funcionamento de APIs de mídia e eventos nativos do navegador.
+
 O **YT-Audio-Capture** é uma ferramenta utilitária leve projetada para ser executada diretamente no console do navegador. Ele utiliza a API *MediaRecorder* em conjunto com a captura de streams de mídia para registrar o áudio de streams ativos em uma página web (como vídeos ou webinares) e exportá-los de forma prática e imediata.
 
 O script também utiliza o paradigma de *Listeners* (ouvintes de eventos), um conceito fundamental da programação orientada a eventos. Nesse modelo, o programa permanece "observando" determinados eventos e executa uma função específica quando eles acontecem. Neste caso, eventos como `play`, `pause` e `ended` são monitorados por listeners para que o script possa reagir automaticamente às mudanças no estado de reprodução do vídeo.
