@@ -2,15 +2,24 @@
 
 ## Descrição
 
-AVISO LEGAL E PROPÓSITO ACADÊMICO: O YT-Audio-Capture é uma Prova de Conceito (PoC) desenvolvida exclusivamente para fins educacionais, de pesquisa e testes de segurança. Seu objetivo é demonstrar o funcionamento de APIs de mídia e eventos nativos do navegador.
-
 O **YT-Audio-Capture** é uma ferramenta utilitária leve projetada para ser executada diretamente no console do navegador. Ele utiliza a API *MediaRecorder* em conjunto com a captura de streams de mídia para registrar o áudio de streams ativos em uma página web (como vídeos ou webinares) e exportá-los de forma prática e imediata.
 
-O script também utiliza o paradigma de *Listeners* (ouvintes de eventos), um conceito fundamental da programação orientada a eventos. Nesse modelo, o programa permanece "observando" determinados eventos e executa uma função específica quando eles acontecem. Neste caso, eventos como `play`, `pause` e `ended` são monitorados por listeners para que o script possa reagir automaticamente às mudanças no estado de reprodução do vídeo.
+Esta ferramenta é ideal para pesquisadores e usuários que precisam de uma solução rápida e transparente de gravação, sem a necessidade de instalar extensões de terceiros ou softwares complexos de captura de áudio.
 
-Por exemplo, quando o vídeo é pausado, o listener associado ao evento `pause` é acionado e inicia a contagem regressiva de 10 segundos. Quando a reprodução é retomada, o listener do evento `play` cancela essa contagem. Dessa forma, o script não precisa verificar continuamente o estado do vídeo, podendo reagir diretamente aos eventos emitidos pelo elemento.
+## Arquitetura e APIs Nativas Consumidas
 
-Esta ferramenta é ideal para usuários que precisam de uma solução rápida de gravação sem a necessidade de instalar extensões de terceiros ou softwares complexos de captura de áudio.
+Para garantir máxima segurança, performance e transparência, o script foi desenvolvido em **Vanilla JavaScript** e não depende de nenhuma biblioteca de terceiros, extensão ou comunicação com servidores externos. Todo o processamento ocorre no lado do cliente (*client-side*) utilizando as seguintes interfaces nativas dos navegadores modernos:
+
+* **DOM API:** Responsável por localizar o elemento de mídia alvo (a tag de vídeo) na página e por construir dinamicamente o painel visual flutuante de gravação (UI) sem a necessidade de injetar HTML bruto via `innerHTML`.
+* **Media Capture API:** Emprega o método `captureStream()` para interceptar e extrair as faixas de áudio que o próprio navegador já decodificou, redirecionando esse fluxo.
+* **MediaRecorder API:** Atua como o motor de codificação. Ele recebe a stream de áudio e a empacota continuamente em pequenos pacotes de dados (*chunks*) dentro de um formato estruturado, como `audio/webm`.
+* **Blob e URL API:** Utilizadas no processo de finalização para pegar todos os dados armazenados na memória (RAM), convertê-los em um objeto de arquivo real (*Blob*) e gerar um link temporário (*ObjectURL*) para disparar o download automático.
+
+## O Paradigma de Listeners (Eventos)
+
+O script utiliza o paradigma de *Listeners* (ouvintes de eventos), um conceito fundamental da programação orientada a eventos. Nesse modelo, o programa permanece "observando" determinados eventos e executa uma função específica quando eles acontecem. Neste caso, eventos nativos de mídia, como `play`, `pause` e `ended`, são monitorados por *listeners* para que o script possa reagir automaticamente às mudanças no estado de reprodução.
+
+Por exemplo, quando o vídeo é pausado, o *listener* associado ao evento `pause` é acionado e inicia uma contagem regressiva de 10 segundos. Quando a reprodução é retomada, o *listener* do evento `play` cancela essa contagem. Dessa forma, o script não precisa verificar continuamente o estado do vídeo através de *loops* pesados, podendo reagir diretamente e de forma otimizada aos gatilhos emitidos pelo elemento.
 
 ---
 
