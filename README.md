@@ -6,7 +6,7 @@ O **YT-Audio-Capture** é uma ferramenta utilitária leve projetada para ser exe
 
 Esta ferramenta é ideal para pesquisadores e usuários que precisam de uma solução rápida e transparente de gravação, sem a necessidade de instalar extensões de terceiros ou softwares complexos de captura de áudio.
 
-## Arquitetura e APIs Nativas Consumidas
+### Arquitetura e APIs Nativas Consumidas
 
 Para garantir máxima segurança, performance e transparência, o script foi desenvolvido em **Vanilla JavaScript** e não depende de nenhuma biblioteca de terceiros, extensão ou comunicação com servidores externos. Todo o processamento ocorre no lado do cliente (*client-side*) utilizando as seguintes interfaces nativas dos navegadores modernos:
 
@@ -15,7 +15,7 @@ Para garantir máxima segurança, performance e transparência, o script foi des
 * **MediaRecorder API:** Atua como o motor de codificação. Ele recebe a stream de áudio e a empacota continuamente em pequenos pacotes de dados (*chunks*) dentro de um formato estruturado, como `audio/webm`.
 * **Blob e URL API:** Utilizadas no processo de finalização para pegar todos os dados armazenados na memória (RAM), convertê-los em um objeto de arquivo real (*Blob*) e gerar um link temporário (*ObjectURL*) para disparar o download automático.
 
-## O Paradigma de Listeners (Eventos)
+### O Paradigma de Listeners (Eventos)
 
 O script utiliza o paradigma de *Listeners* (ouvintes de eventos), um conceito fundamental da programação orientada a eventos. Nesse modelo, o programa permanece "observando" determinados eventos e executa uma função específica quando eles acontecem. Neste caso, eventos nativos de mídia, como `play`, `pause` e `ended`, são monitorados por *listeners* para que o script possa reagir automaticamente às mudanças no estado de reprodução.
 
