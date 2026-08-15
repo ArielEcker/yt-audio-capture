@@ -27,7 +27,7 @@ Siga os passos abaixo para utilizar o script em qualquer página compatível:
 - **Acesse a página:** Abra o vídeo no YouTube pelo navegador Chrome. *Importante:* O script funciona como um listener (ouvinte), portanto, o vídeo precisa estar sendo executado para que a captura do áudio ocorra.
 - **Abra o Console:** Você pode abrir o console clicando com o botão direito em qualquer parte da página e selecionando "Inspecionar" (Inspect) > aba "Console", ou utilizando o atalho do teclado (`Ctrl+Shift+I` ou `F12` no Windows/Linux, `Cmd+Option+I` no macOS).
 - **Limpe o Console:** Antes de colar o código, clique no ícone de "Limpar console" (geralmente um círculo com um traço ou vassoura) para garantir uma visualização limpa dos logs.
-- **Injete o Código:** Copie o script, cole-o no console e pressione `Enter`.
+- **Injete o Código:** Abra o arquivo `yt-audio-capture.js` presente nos arquivos deste repositório, copie todo o seu conteúdo, volte à aba do vídeo, cole o código no console e pressione `Enter`.
 - **Acompanhe o Progresso:** Fique atento aos logs exibidos no console; eles indicarão o status da gravação, erros ou avisos importantes. O script adicionará um indicador visual na tela.
   - *Atenção:* Se você pausar o vídeo, o script iniciará uma contagem regressiva de 10 segundos antes de finalizar a gravação automaticamente. Se a reprodução for retomada dentro desse intervalo, a contagem é cancelada e a gravação segue normalmente.
 
