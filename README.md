@@ -1,8 +1,10 @@
-# YT-Audio-Capture
+# YT-Audio-Downloader
+
+> **AVISO LEGAL E PROPÓSITO ACADÊMICO:** O YT-Audio-Capture é uma Prova de Conceito (PoC) desenvolvida exclusivamente para fins educacionais, de pesquisa e testes de segurança. Seu objetivo é demonstrar o funcionamento de APIs de mídia e eventos nativos do navegador. O código é fornecido "no estado em que se encontra", e o usuário assume total responsabilidade ao utilizá-lo. O desenvolvedor rejeita expressamente qualquer responsabilidade por uso indevido.
 
 ## Descrição
 
-O **YT-Audio-Capture** é uma ferramenta utilitária leve projetada para ser executada diretamente no console do navegador. Ele utiliza a API *MediaRecorder* em conjunto com a captura de streams de mídia para registrar o áudio de streams ativos em uma página web (como vídeos ou webinares) e exportá-los de forma prática e imediata.
+O **YT-Audio-Downloader** é uma ferramenta utilitária leve projetada para ser executada diretamente no console do navegador. Ele utiliza a API *MediaRecorder* em conjunto com a captura de streams de mídia para registrar o áudio de streams ativos em uma página web (como vídeos do YouTube) e exportá-los de forma prática e imediata.
 
 Esta ferramenta é ideal para pesquisadores e usuários que precisam de uma solução rápida e transparente de gravação, sem a necessidade de instalar extensões de terceiros ou softwares complexos de captura de áudio.
 
@@ -26,7 +28,6 @@ Por exemplo, quando o vídeo é pausado, o *listener* associado ao evento `pause
 ## Funcionalidades
 
 - **Captura via Stream:** Grava diretamente o fluxo de áudio processado pelo navegador, garantindo fidelidade sonora.
-- **Detecção Automática de Formato:** Identifica os tipos MIME suportados pelo navegador (como `audio/webm` ou `audio/ogg`) para máxima compatibilidade.
 - **Interface Visual Integrada:** Cria um painel flutuante de controle na página para iniciar e interromper a gravação de forma intuitiva.
 - **Download Automático:** Gera e dispara o download do arquivo de áudio instantaneamente após a finalização da captura.
 
@@ -36,11 +37,11 @@ Por exemplo, quando o vídeo é pausado, o *listener* associado ao evento `pause
 
 Siga os passos abaixo para utilizar o script em qualquer página compatível:
 
-- **Acesse a página:** Abra o vídeo no YouTube pelo navegador Chrome. *Importante:* O script funciona como um listener (ouvinte), portanto, o vídeo precisa estar sendo executado para que a captura do áudio ocorra.
-- **Abra o Console:** Você pode abrir o console clicando com o botão direito em qualquer parte da página e selecionando "Inspecionar" (Inspect) > aba "Console", ou utilizando o atalho do teclado (`Ctrl+Shift+I` ou `F12` no Windows/Linux, `Cmd+Option+I` no macOS).
-- **Limpe o Console:** Antes de colar o código, clique no ícone de "Limpar console" (geralmente um círculo com um traço ou vassoura) para garantir uma visualização limpa dos logs.
-- **Injete o Código:** Abra o arquivo `yt-audio-capture.js` presente nos arquivos deste repositório, copie todo o seu conteúdo, volte à aba do vídeo, cole o código no console e pressione `Enter`.
-- **Acompanhe o Progresso:** Fique atento aos logs exibidos no console; eles indicarão o status da gravação, erros ou avisos importantes. O script adicionará um indicador visual na tela.
+- **1 - Acesse a página:** Abra o vídeo no YouTube pelo navegador Chrome. *Importante:* O script funciona como um listener (ouvinte), portanto, o vídeo precisa estar sendo executado para que a captura do áudio ocorra.
+- **2 - Abra o Console:** Você pode abrir o console clicando com o botão direito em qualquer parte da página e selecionando "Inspecionar" (Inspect) > aba "Console", ou utilizando o atalho do teclado (`Ctrl+Shift+I` ou `F12` no Windows/Linux, `Cmd+Option+I` no macOS).
+- **3 - Limpe o Console:** Antes de colar o código, clique no ícone de "Limpar console" (geralmente um círculo com um traço ou vassoura) para garantir uma visualização limpa dos logs.
+- **4 - Injete o Código:** Abra o arquivo `yt-audio-capture.js` presente nos arquivos deste repositório, copie todo o seu conteúdo, volte à aba do vídeo, cole o código no console e pressione `Enter`.
+- **5 - Acompanhe o Progresso:** Fique atento aos logs exibidos no console; eles indicarão o status da gravação, erros ou avisos importantes. O script adicionará um indicador visual na tela.
   - *Atenção:* Se você pausar o vídeo, o script iniciará uma contagem regressiva de 10 segundos antes de finalizar a gravação automaticamente. Se a reprodução for retomada dentro desse intervalo, a contagem é cancelada e a gravação segue normalmente.
 
 ---
